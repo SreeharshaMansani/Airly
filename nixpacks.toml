@@ -1,8 +1,25 @@
 [phases.setup]
-nixPkgs = ["chromium", "nss", "atk", "gtk3", "libdrm", "libxkbcommon", "libxcomposite", "libxdamage", "libxrandr", "libgbm", "libxss", "libasound", "alsa-lib", "libglib-2.0-0"]
+nixPkgs = [
+  "chromium",
+  "glib",
+  "libglib",
+  "nss",
+  "atk",
+  "gtk3",
+  "libxcomposite",
+  "libxdamage",
+  "libxrandr",
+  "libgbm",
+  "libxss",
+  "libasound",
+  "alsa-lib",
+  "libx11",
+  "libxtst",
+  "libxcb"
+]
 
 [phases.build]
-cmds = ["npm ci --only=production"]
+cmds = ["npm ci --omit=dev"]
 
 [phases.production]
 cmds = ["npm start"]
