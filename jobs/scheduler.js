@@ -5,12 +5,22 @@ const { checkCheckouts } = require('../services/checkoutService');
 const startScheduler = () => {
     console.log('⏰ Scheduler started');
 
-    // Run immediately on startup
-    checkCheckouts();
+    // Run immediately on startup (wrapped in try-catch)
+    (async () => {
+        try {
+            await checkCheckouts();
+        } catch (error) {
+            console.error('❌ Initial checkout check failed:', error.message);
+        }
+    })();
 
     // Then every 1 hour
-    cron.schedule('0 * * * *', () => {
-        checkCheckouts();
+    cron.schedule('0 * * * *', async () => {
+        try {
+            await checkCheckouts();
+        } catch (error) {
+            console.error('❌ Scheduled checkout check failed:', error.message);
+        }
     });
 };
 
