@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ical": "^0.8.0",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^4.2.1",
+    "node-ical": "^0.25.6",
+    "pg": "^8.20.0",
+    "pg-hstore": "^2.3.4",
+    "qrcode-terminal": "^0.12.0",
+    "sequelize": "^6.37.8",
+    "twilio": "^5.13.0",
+    "whatsapp-web.js": "^1.23.0"
+  }
+}
